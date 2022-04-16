@@ -5,7 +5,7 @@ import './App.css'
 import { useCallback, useEffect, useState } from 'react'
 
 // data
-import {wordsList} from "./data/words"
+import { wordsList } from "./data/words"
 
 // components
 import StartScreen from './components/StartScreen'
@@ -31,7 +31,7 @@ function App() {
   const [guessedLetters, setGuessedLetters] = useState([])
   const [wrongLetters, setWrongLetters] = useState([])
   const [guesses, setGuesses] = useState(guessesQty)
-  const [score, setScore] = useState(50)
+  const [score, setScore] = useState(-200)
 
   const pickWordAndCategory = useCallback(() => {
     // pick a random category
@@ -133,7 +133,6 @@ function App() {
   const retry = () => {
     setScore(0)
     setGuesses(guessesQty)
-
     setGameStage(stages[0].name)
   }
 
